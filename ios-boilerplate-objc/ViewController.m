@@ -28,9 +28,22 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleOpenURL:) name:@"flicApp" object:nil];
+    
 	[SCLFlicManager configureWithDelegate:self defaultButtonDelegate:self appID:FLIC_APP_ID appSecret:FLIC_APP_SECRET backgroundExecution:NO];
 	self.imageView.layer.magnificationFilter = kCAFilterNearest;
 	[self updateUI];
+}
+
+- (void)handleOpenURL:(NSNotification*)notification
+{
+    NSURL* url = [notification object];
+    
+    if ([url isKindOfClass:[NSURL class]]) {
+        [[SCLFlicManager sharedManager] handleOpenURL:url];
+        NSLog(@"handleOpenURL %@", url);
+    }
 }
 
 - (void)updateUI;

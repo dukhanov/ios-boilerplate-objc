@@ -15,11 +15,11 @@
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
+/*- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options;
 {
 	BOOL wasHandled = NO;
 	wasHandled = [[SCLFlicManager sharedManager] handleOpenURL:url];
 	return wasHandled;
-}
+}*/
 
 @end
