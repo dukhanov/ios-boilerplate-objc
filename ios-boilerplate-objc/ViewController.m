@@ -96,4 +96,24 @@
 	} completion:nil];
 }
 
+// button was clicked
+- (void)flicButton:(SCLFlicButton *)button didReceiveButtonClick:(BOOL)queued age:(NSInteger)age
+{
+    NSLog(@"didReceiveButtonClick");
+    
+}
+
+// button was double clicked
+- (void)flicButton:(SCLFlicButton *)button didReceiveButtonDoubleClick:(BOOL)queued age:(NSInteger)age
+{
+    NSLog(@"didReceiveButtonDoubleClick");
+}
+
+// button was hold
+- (void)flicButton:(SCLFlicButton *)button didReceiveButtonHold:(BOOL)queued age:(NSInteger)age
+{
+    NSLog(@"didReceiveButtonHold");
+}
+
+
 @end
